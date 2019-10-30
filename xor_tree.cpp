@@ -16,4 +16,14 @@ vector<ll> init(100010);
 vector<ll> goal(100010);
 vector<ll> vis(100010);
 ll len=0,ans[100010];
+void dfs1(ll s,ll level)
+{
+	vis[s]=1;
+	lvl[s]=level+1;
+	forit(it,adj[s])
+	{
+		if(!vis[*it])
+			dfs1(*it,lvl[s]);
+	}
+}
 
