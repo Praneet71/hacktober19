@@ -27,3 +27,21 @@ void dfs1(ll s,ll level)
 	}
 }
 
+void dfs2(ll s,ll evenl,ll oddl)
+{
+	vis[s]=1;
+	if(lvl[s]%2==0&&evenl%2==1)
+			init[s]^=1;
+	if(lvl[s]%2==1&&oddl%2==1)
+			init[s]^=1;
+	if(init[s]!=goal[s])
+	{
+		if(lvl[s]%2==0)evenl++,ans[++len]=s;
+		else oddl++,ans[++len]=s;
+	}
+	forit(it,adj[s])
+	{
+		if(!vis[*it])
+			dfs2(*it,evenl,oddl);
+	}
+}
