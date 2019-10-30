@@ -45,3 +45,19 @@ void dfs2(ll s,ll evenl,ll oddl)
 			dfs2(*it,evenl,oddl);
 	}
 }
+int main()
+{
+	ios::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+	ll n,i,u,v;
+	cin>>n;
+	for1(i,n-1)
+	cin>>u>>v,adj[u].pb(v),adj[v].pb(u);
+	for1(i,n)
+	cin>>init[i];
+	for1(i,n)
+	cin>>goal[i];
+	dfs1(1,-1);
+	vis.assign(100010,0);
+	dfs2(1,0,0);
+	cout<<len<<endl;
+}
