@@ -60,4 +60,7 @@ int main()
 	vis.assign(100010,0);
 	dfs2(1,0,0);
 	cout<<len<<endl;
+	for1(i,len)
+	cout<<ans[i]<<endl;
+	return 0;	
 }
